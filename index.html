@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación | Andrea Silva</title>
+    <!-- Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para una tipografía elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos personalizados para aplicar las fuentes importadas */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        /* Pequeña animación para los elementos al cargar */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Estilo para el efecto de vidrio esmerilado (Glassmorphism) */
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        /* Clase para aplicar la forma de onda a la imagen */
+        .wave-clip {
+            clip-path: url(#wave-shape);
+        }
+        /* Estilos para el scroll en los modales */
+        .modal-content-scroll {
+             max-height: 80vh;
+             overflow-y: auto;
+        }
+        /* Estilos para el carrusel */
+        .carousel-track {
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-rose-100 to-teal-100 flex justify-center sm:items-center min-h-screen sm:p-4">
+
+    <!-- Definición del SVG para la forma de onda -->
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <clipPath id="wave-shape" clipPathUnits="objectBoundingBox">
+                <path d="M 0,0 L 1,0 L 1,0.85 Q 0.5,1.05 0,0.85 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <!-- Contenedor principal de la tarjeta -->
+    <div class="w-full sm:max-w-sm glassmorphism sm:rounded-3xl sm:shadow-lg sm:shadow-pink-200/50 overflow-hidden fade-in relative min-h-screen sm:min-h-0 flex flex-col">
+        
+        <!-- Botón para Instalar Tarjeta -->
+        <a href="#" id="install-button" title="Instalar en mi dispositivo" class="absolute top-4 left-4 z-10 text-slate-700 bg-white/50 p-2 rounded-full hover:bg-white/80 transition-colors duration-300 shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2zM12 9v4m0 0l-2-2m2 2l2-2" />
+            </svg>
+        </a>
+        
+        <!-- Botón para Enviar Correo -->
+        <a href="mailto:andy.slvcc@gmail.com" id="send-email-button" title="Enviar correo" class="absolute top-4 right-4 z-10 text-slate-700 bg-white/50 p-2 rounded-full hover:bg-white/80 transition-colors duration-300 shadow">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        </a>
+
+        <!-- Contenido que se puede desplazar -->
+        <div class="flex-grow overflow-y-auto">
+            <!-- Sección del encabezado con fondo y foto de perfil -->
+            <header class="relative">
+                <!-- Fondo con imagen de decoración de fiesta y clip-path -->
+                <div class="h-48 bg-cover bg-center wave-clip" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUoU8r8faa2zORw0aifkjQFt08bKK9pqFLd5rcy7LK_NDQwziMH3I-oLDJ&s=10');">
+                </div>
+                
+                <!-- Contenedor de la foto de perfil para centrarla -->
+                <div class="absolute -bottom-16 left-1/2 -translate-x-1/2">
+                    <div class="relative w-32 h-32">
+                        <img 
+                            src="https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/8fdf77f58248bdac1fb15db0cad15afc~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=fd51d202&x-expires=1784998800&x-signature=kVL%2BrYyZWX3CQqffbzpfuEdDnmg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2" 
+                            alt="Foto de perfil de Andrea Silva" 
+                            class="w-full h-full rounded-full border-4 border-white/80 shadow-xl object-cover ring-4 ring-blue-500"
+                            onerror="this.onerror=null;this.src='https://placehold.co/128x128/E9D5FF/3730A3?text=Foto&font=sans';"
+                        >
+                        <!-- Insignia de Verificación -->
+                        <div class="absolute bottom-1 right-1 bg-blue-500 border-2 border-white rounded-full p-1 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido principal: nombre, título y botones -->
+            <main class="pt-20 pb-8 px-6 text-center">
+                
+                <!-- Nombre y título -->
+                <h1 class="text-4xl font-dancing-script text-slate-800">Andy Silva</h1>
+                <p class="text-gray-600 mt-1 tracking-wide">CREADORA UGC</p>
+
+                <!-- Botón principal de llamada con gradiente -->
+                <a href="https://www.tiktok.com/@andy.slv" target="_blank" class="mt-8 inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full shadow-lg shadow-pink-500/30 hover:shadow-xl hover:shadow-pink-500/50 transition-all duration-300 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                    Sígueme en TikTok
+                </a>
+
+                <!-- Iconos de redes sociales -->
+                <div class="mt-8 flex flex-wrap justify-center gap-4 px-4">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/AndySlv" target="_blank" class="text-center text-gray-600 hover:text-blue-600 transition-all duration-300 w-20">
+                        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-white/60 rounded-full mb-2 shadow-md transform hover:scale-110 hover:shadow-lg transition-all duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <span class="text-xs font-semibold">Facebook</span>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/andy.slv/" target="_blank" class="text-center text-gray-600 hover:text-rose-500 transition-all duration-300 w-20">
+                         <div class="w-16 h-16 mx-auto flex items-center justify-center bg-white/60 rounded-full mb-2 shadow-md transform hover:scale-110 hover:shadow-lg transition-all duration-300">
+                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049 1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 6.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2Z M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm4.5-9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <span class="text-xs font-semibold">Instagram</span>
+                    </a>
+                    
+                    <!-- Galería de eventos -->
+                    <a href="#" id="gallery-button" class="text-center text-gray-600 hover:text-indigo-500 transition-all duration-300 w-20">
+                        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-white/60 rounded-full mb-2 shadow-md transform hover:scale-110 hover:shadow-lg transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold">Galería</span>
+                    </a>
+                    <!-- Servicios -->
+                    <a href="#" id="services-button" class="text-center text-gray-600 hover:text-purple-500 transition-all duration-300 w-20">
+                        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-white/60 rounded-full mb-2 shadow-md transform hover:scale-110 hover:shadow-lg transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold">Servicios</span>
+                    </a>
+                    
+                    <!-- Compartir QR -->
+                    <a href="#" id="qr-button" class="text-center text-gray-600 hover:text-slate-700 transition-all duration-300 w-20">
+                        <div class="w-16 h-16 mx-auto flex items-center justify-center bg-white/60 rounded-full mb-2 shadow-md transform hover:scale-110 hover:shadow-lg transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold">Compartir QR</span>
+                    </a>
+                </div>
+            </main>
+        </div>
+        
+        <!-- Pie de página Fijo -->
+        <footer class="text-center py-4">
+            <p class="font-dancing-script text-2xl text-rose-500">Hello hermanaas.</p>
+        </footer>
+
+    </div>
+
+    <!-- Modal del Código QR -->
+    <div id="qr-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-gradient-to-br from-white to-rose-50 rounded-2xl shadow-2xl p-8 max-w-xs w-full text-center relative transform transition-all duration-300 scale-95 opacity-0 border-2 border-rose-500" id="qr-modal-content">
+            <!-- Botón para cerrar el modal -->
+            <button id="close-qr-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-rose-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <h3 class="text-2xl font-semibold text-rose-500 mb-2 font-dancing-script">Comparte mi Tarjeta</h3>
+            <p class="text-gray-500 mb-4 text-sm">Escanea el código QR con tu teléfono.</p>
+            <!-- Contenedor para la imagen del QR -->
+            <div class="p-2 border border-rose-200 bg-white shadow-inner rounded-lg inline-block">
+                <img id="qr-code-img" src="" alt="Código QR" class="w-48 h-48">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Servicios (Mini Landing Page) -->
+    <div id="services-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-white/95 rounded-2xl shadow-2xl p-6 md:p-8 max-w-2xl w-full relative transform transition-all duration-300 scale-95 opacity-0 modal-content-scroll border-2 border-rose-500">
+            <!-- Botón para cerrar el modal -->
+            <button id="close-services-modal-btn" class="absolute top-4 right-4 z-10 text-gray-400 hover:text-rose-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <div class="text-center px-4">
+                 <h2 class="text-3xl md:text-4xl font-bold font-dancing-script bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Transforma Tu visualizacion en redes</h2>
+                 <p class="mt-2 text-gray-600 max-w-lg mx-auto">Soluciones creativas y personalizadas para que tu negocio sea exactamente como la soñaste. Descubre mis paquetes de publicidad.</p>
+            </div>
+
+            <!-- Sección de Paquetes de Servicios -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Paquete 1: Esencial -->
+                <div class="bg-rose-50 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow border border-rose-100">
+                    <img src="https://i.postimg.cc/bv04pbVm/pb.jpg" alt="Paquete Decoración Esencial" class="w-32 h-32 rounded-lg mx-auto shadow-md mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/300x300/FFE4E6/BE123C?text=Esencial';">
+                    <h3 class="font-semibold text-lg text-slate-700">Paquete basico</h3>
+                    <p class="text-sm text-gray-500 mt-2">El paquete perfecto para quienes van empezando. incluye 1 video en mis redes.</p>
+                </div>
+                <!-- Paquete 2: Completa -->
+                <div class="bg-rose-50 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow border border-rose-100">
+                    <img src="https://i.postimg.cc/7L1jw7tm/pp.jpg" alt="Paquete Celebración Completa" class="w-32 h-32 rounded-lg mx-auto shadow-md mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/300x300/CCFBF1/0F766E?text=Completa';">
+                    <h3 class="font-semibold text-lg text-slate-700">Paquete plata</h3>
+                    <p class="text-sm text-gray-500 mt-2">Todo lo que necesitas para un negocio espectacular. incluye 1 video y 1 publicacion en mis redes.</p>
+                </div>
+                <!-- Paquete 3: De Lujo -->
+                <div class="bg-rose-50 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow border border-rose-100">
+                    <img src="https://i.postimg.cc/9fPsCTg1/po.jpg" alt="Paquete Evento de Lujo" class="w-32 h-32 rounded-lg mx-auto shadow-md mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/300x300/F1F5F9/334155?text=De+Lujo';">
+                    <h3 class="font-semibold text-lg text-slate-700">Paquete oro</h3>
+                    <p class="text-sm text-gray-500 mt-2">La experiencia premium. 1 video en tus instalaciones (solo aplica en Mty) 1 video generico y 2 publicaciones en mis redes.</p>
+                </div>
+            </div>
+
+             <!-- CTA Final -->
+             <div class="mt-8 text-center">
+                <a href="mailto:andy.slvcc@gmail.com" target="_blank" class="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full shadow-lg shadow-pink-500/30 hover:shadow-xl hover:shadow-pink-500/50 transition-all duration-300 transform hover:scale-105">
+                    ¡Quiero Cotizar Mi Paquete!
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Instalar Tarjeta -->
+    <div id="install-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-gradient-to-br from-white to-teal-50 rounded-2xl shadow-2xl p-8 max-w-md w-full relative transform transition-all duration-300 scale-95 opacity-0 modal-content-scroll border-2 border-rose-500" id="install-modal-content">
+            <!-- Botón para cerrar el modal -->
+            <button id="close-install-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-teal-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <div class="text-center">
+                <h3 class="text-3xl font-bold text-teal-600 font-dancing-script">Instala mi Tarjeta</h3>
+                <p class="text-gray-500 mt-2">Acceso directo desde tu pantalla de inicio.</p>
+            </div>
+            
+            <div class="mt-6 space-y-4">
+                <!-- Instrucciones para iOS -->
+                <div class="bg-rose-50 p-4 rounded-lg border border-rose-100">
+                    <h4 class="font-semibold text-lg text-rose-800 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Para iOS (iPhone)
+                    </h4>
+                    <p class="mt-2 text-gray-600 text-sm">1. Pulsa el ícono de <span class="font-semibold">Compartir</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg> en tu navegador.</p>
+                    <p class="mt-1 text-gray-600 text-sm">2. Desliza hacia arriba y selecciona <span class="font-semibold">"Agregar a la pantalla de inicio"</span>.</p>
+                </div>
+                <!-- Instrucciones para Android -->
+                <div class="bg-teal-50 p-4 rounded-lg border border-teal-100">
+                    <h4 class="font-semibold text-lg text-teal-800 flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                        Para Android
+                    </h4>
+                    <p class="mt-2 text-gray-600 text-sm">1. Pulsa los <span class="font-semibold">tres puntos</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" /></svg> en la esquina superior.</p>
+                    <p class="mt-1 text-gray-600 text-sm">2. Selecciona <span class="font-semibold">"Instalar aplicación"</span> o <span class="font-semibold">"Agregar a pantalla principal"</span>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Galería de Eventos -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-white/95 rounded-2xl shadow-2xl p-6 max-w-lg w-full relative transform transition-all duration-300 scale-95 opacity-0 border-2 border-rose-500" id="gallery-modal-content">
+             <!-- Botón para cerrar el modal -->
+             <button id="close-gallery-modal-btn" class="absolute -top-3 -right-3 z-20 text-gray-500 bg-white rounded-full p-1 hover:text-rose-500 hover:shadow-md transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </button>
+            <h2 class="text-3xl font-bold text-center mb-4 font-dancing-script bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Galería de Eventos</h2>
+            
+            <!-- Carrusel -->
+            <div id="carousel-container" class="relative w-full overflow-hidden rounded-lg">
+                <div id="carousel-track" class="flex">
+                    <!-- Las imágenes se insertarán aquí desde JS -->
+                </div>
+                <!-- Botones de Navegación -->
+                <button id="prev-button" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 text-slate-700 rounded-full p-2 hover:bg-white/80 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button id="next-button" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 text-slate-700 rounded-full p-2 hover:bg-white/80 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
+            <!-- Indicadores (puntos) -->
+            <div id="carousel-dots" class="flex justify-center mt-4 space-x-2">
+                <!-- Los puntos se insertarán aquí desde JS -->
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Lógica para el Modal del Código QR ---
+            const qrButton = document.querySelector('#qr-button');
+            const qrModal = document.querySelector('#qr-modal');
+            const qrModalContent = document.querySelector('#qr-modal-content');
+            const closeQrModalBtn = document.querySelector('#close-qr-modal-btn');
+            const qrCodeImg = document.querySelector('#qr-code-img');
+
+            const showQrModal = () => {
+                const currentUrl = window.location.href;
+                const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(currentUrl)}`;
+                qrCodeImg.src = qrApiUrl;
+                qrModal.classList.remove('hidden');
+                setTimeout(() => {
+                    qrModal.classList.add('opacity-100');
+                    qrModalContent.classList.remove('scale-95', 'opacity-0');
+                    qrModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            const hideQrModal = () => {
+                qrModalContent.classList.add('scale-95', 'opacity-0');
+                qrModal.classList.remove('opacity-100');
+                setTimeout(() => qrModal.classList.add('hidden'), 300);
+            };
+
+            qrButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showQrModal();
+            });
+            closeQrModalBtn.addEventListener('click', hideQrModal);
+
+            // --- Lógica para el Modal de Servicios ---
+            const servicesButton = document.querySelector('#services-button');
+            const servicesModal = document.querySelector('#services-modal');
+            const servicesModalContent = servicesModal.querySelector('.modal-content-scroll');
+            const closeServicesModalBtn = document.querySelector('#close-services-modal-btn');
+
+            const showServicesModal = () => {
+                servicesModal.classList.remove('hidden');
+                setTimeout(() => {
+                    servicesModal.classList.add('opacity-100');
+                    servicesModalContent.classList.remove('scale-95', 'opacity-0');
+                    servicesModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            const hideServicesModal = () => {
+                servicesModalContent.classList.add('scale-95', 'opacity-0');
+                servicesModal.classList.remove('opacity-100');
+                setTimeout(() => servicesModal.classList.add('hidden'), 300);
+            };
+            
+            servicesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showServicesModal();
+            });
+            closeServicesModalBtn.addEventListener('click', hideServicesModal);
+
+            // --- Lógica para el Modal de Instalación ---
+            const installButton = document.querySelector('#install-button');
+            const installModal = document.querySelector('#install-modal');
+            const installModalContent = document.querySelector('#install-modal-content');
+            const closeInstallModalBtn = document.querySelector('#close-install-modal-btn');
+
+            const showInstallModal = () => {
+                installModal.classList.remove('hidden');
+                 setTimeout(() => {
+                    installModal.classList.add('opacity-100');
+                    installModalContent.classList.remove('scale-95', 'opacity-0');
+                    installModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            const hideInstallModal = () => {
+                installModalContent.classList.add('scale-95', 'opacity-0');
+                installModal.classList.remove('opacity-100');
+                setTimeout(() => installModal.classList.add('hidden'), 300);
+            };
+
+            installButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showInstallModal();
+            });
+            closeInstallModalBtn.addEventListener('click', hideInstallModal);
+
+            // --- Lógica para el Modal de Galería y Carrusel ---
+            const galleryButton = document.getElementById('gallery-button');
+            const galleryModal = document.getElementById('gallery-modal');
+            const galleryModalContent = document.getElementById('gallery-modal-content');
+            const closeGalleryModalBtn = document.getElementById('close-gallery-modal-btn');
+            const carouselTrack = document.getElementById('carousel-track');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const dotsContainer = document.getElementById('carousel-dots');
+            
+            const images = [
+                'https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/8fdf77f58248bdac1fb15db0cad15afc~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=fd51d202&x-expires=1784998800&x-signature=kVL%2BrYyZWX3CQqffbzpfuEdDnmg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_kZ15FpIsR_9S4uX1SYEn8A2WZUBiVxX1oKfGdwMkLN3JRiGq0pz0hJG_&s=10',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-mR9jFakR0_YX1llGFsrfRva9mZUBoVDszQRtMgvlj4zafwS-w1p-Y5Z&s=10',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR-xxMVkJtvM425GiTrayr2VmVPkiTxhOGABefosxrnFiBGJJORfnD5u0&s=10',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG6GAIL_2oJaVMITRZ8BUb0prliHzkuAthmq70dOFkwOMXD2wI4XIxdZs&s=10'
+            ];
+            
+            let currentIndex = 1;
+            let isTransitioning = false;
+
+            function setupCarousel() {
+                carouselTrack.innerHTML = '';
+                dotsContainer.innerHTML = '';
+
+                const slides = [...images];
+                const firstClone = slides[0];
+                const lastClone = slides[slides.length - 1];
+                
+                const allSlides = [lastClone, ...slides, firstClone];
+
+                carouselTrack.innerHTML = allSlides.map(src => `
+                    <div class="carousel-slide p-1">
+                        <img src="${src}" class="w-full h-64 md:h-80 object-contain rounded-md shadow-lg" alt="Decoración de evento" onerror="this.onerror=null;this.src='https://placehold.co/600x400/F43F5E/FFFFFF?text=Galeria+Evento';">
+                    </div>
+                `).join('');
+
+                images.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-rose-400', 'transition-colors');
+                    dot.addEventListener('click', () => {
+                        if (isTransitioning) return;
+                        currentIndex = i + 1;
+                        updateCarousel();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+                
+                updateCarousel(false);
+            }
+
+            function updateCarousel(transition = true) {
+                if (!carouselTrack.querySelector('.carousel-slide')) return;
+                if (transition) {
+                    carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+                } else {
+                    carouselTrack.style.transition = 'none';
+                }
+                const slideWidth = carouselTrack.querySelector('.carousel-slide').clientWidth;
+                carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((dot, i) => {
+                    let realIndex = currentIndex - 1;
+                    if (realIndex >= images.length) realIndex = 0;
+                    if (realIndex < 0) realIndex = images.length - 1;
+                    
+                    dot.classList.toggle('bg-rose-500', i === realIndex);
+                    dot.classList.toggle('bg-gray-300', i !== realIndex);
+                });
+            }
+
+            function handleTransitionEnd() {
+                isTransitioning = false;
+                if (currentIndex === 0) {
+                    currentIndex = images.length;
+                    updateCarousel(false);
+                } else if (currentIndex === images.length + 1) {
+                    currentIndex = 1;
+                    updateCarousel(false);
+                }
+            }
+            
+            nextButton.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                updateCarousel();
+            });
+            
+            prevButton.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex--;
+                updateCarousel();
+            });
+            
+            carouselTrack.addEventListener('transitionend', handleTransitionEnd);
+
+            const showGalleryModal = () => {
+                galleryModal.classList.remove('hidden');
+                setTimeout(() => {
+                    galleryModal.classList.add('opacity-100');
+                    galleryModalContent.classList.remove('scale-95', 'opacity-0');
+                    galleryModalContent.classList.add('scale-100', 'opacity-100');
+                    setTimeout(() => {
+                        updateCarousel(false); 
+                    }, 100); 
+                }, 10);
+            };
+
+            const hideGalleryModal = () => {
+                galleryModalContent.classList.add('scale-95', 'opacity-0');
+                galleryModal.classList.remove('opacity-100');
+                setTimeout(() => galleryModal.classList.add('hidden'), 300);
+            };
+
+            galleryButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showGalleryModal();
+            });
+            closeGalleryModalBtn.addEventListener('click', hideGalleryModal);
+            
+            setupCarousel();
+            window.addEventListener('resize', () => updateCarousel(false));
+
+            // --- Lógica para el Modal de Horario de Atención ---
+            const scheduleButton = document.getElementById('schedule-button');
+            const scheduleModal = document.getElementById('schedule-modal');
+            const scheduleModalContent = document.getElementById('schedule-modal-content');
+            const closeScheduleModalBtn = document.getElementById('close-schedule-modal-btn');
+
+            function updateOpeningStatus() {
+                const statusIndicator = document.getElementById('status-indicator');
+                const statusText = document.getElementById('status-text');
+                
+                // Usar la hora local del navegador y simular que es la de Ecuador (GMT-5)
+                const now = new Date();
+                const ecuadorOffset = -5 * 60; // offset en minutos
+                const localOffset = now.getTimezoneOffset();
+                const ecuadorTime = new Date(now.getTime() + (ecuadorOffset - localOffset) * 60 * 1000);
+
+                const day = ecuadorTime.getDay(); // 0=Domingo, 1=Lunes,... 6=Sábado
+                const hour = ecuadorTime.getHours();
+
+                let isOpen = false;
+
+                if (day >= 1 && day <= 5) { // Lunes a Viernes
+                    if (hour >= 9 && hour < 18) {
+                        isOpen = true;
+                    }
+                } else if (day === 6) { // Sábado
+                    if (hour >= 10 && hour < 16) {
+                        isOpen = true;
+                    }
+                }
+
+                if (isOpen) {
+                    statusIndicator.classList.remove('bg-red-500');
+                    statusIndicator.classList.add('bg-green-500');
+                    statusText.textContent = 'Ahora: Abierto';
+                } else {
+                    statusIndicator.classList.remove('bg-green-500');
+                    statusIndicator.classList.add('bg-red-500');
+                    statusText.textContent = 'Ahora: Cerrado';
+                }
+            }
+            
+            const showScheduleModal = () => {
+                updateOpeningStatus();
+                scheduleModal.classList.remove('hidden');
+                setTimeout(() => {
+                    scheduleModal.classList.add('opacity-100');
+                    scheduleModalContent.classList.remove('scale-95', 'opacity-0');
+                    scheduleModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            const hideScheduleModal = () => {
+                scheduleModalContent.classList.add('scale-95', 'opacity-0');
+                scheduleModal.classList.remove('opacity-100');
+                setTimeout(() => scheduleModal.classList.add('hidden'), 300);
+            };
+
+            scheduleButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showScheduleModal();
+            });
+            closeScheduleModalBtn.addEventListener('click', hideScheduleModal);
+
+            // --- Lógica General de Modales (Cerrar al hacer clic fuera o con Escape) ---
+            const handleGlobalModalClose = (e) => {
+                if (e.target === qrModal) hideQrModal();
+                if (e.target === servicesModal) hideServicesModal();
+                if (e.target === installModal) hideInstallModal();
+                if (e.target === galleryModal) hideGalleryModal();
+                if (e.target === scheduleModal) hideScheduleModal();
+            };
+            
+            const handleEscapeKey = (e) => {
+                if (e.key === 'Escape') {
+                    if (!qrModal.classList.contains('hidden')) hideQrModal();
+                    if (!servicesModal.classList.contains('hidden')) hideServicesModal();
+                    if (!installModal.classList.contains('hidden')) hideInstallModal();
+                    if (!galleryModal.classList.contains('hidden')) hideGalleryModal();
+                    if (!scheduleModal.classList.contains('hidden')) hideScheduleModal();
+                }
+            };
+
+            document.addEventListener('click', handleGlobalModalClose);
+            document.addEventListener('keydown', handleEscapeKey);
+        });
+    </script>
+
+</body>
+</html>
